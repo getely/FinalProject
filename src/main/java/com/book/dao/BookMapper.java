@@ -25,5 +25,6 @@ public interface BookMapper {
     @Select("select * from book")
     List<Book> getBookList();
 
-
+    @Insert("insert into book(title,`desc`,price) values(#{title},#{desc},#{price})")//插入书本名，简介和价格
+    void InsertBook(@Param("title") String title,@Param("desc") String desc,@Param("price") double price);
 }
